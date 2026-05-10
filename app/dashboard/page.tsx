@@ -6,14 +6,6 @@ export default function DashboardPage() {
   const [balance, setBalance] = useState(176615);
   const [showReceipt, setShowReceipt] = useState(false);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBalance((prev) => prev + 485);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-500 via-pink-400 to-black p-4 text-white">
 
