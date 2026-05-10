@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function DashboardPage() {
-  const [balance, setBalance] = useState(7000);
+  const [balance, setBalance] = useState(176615);
   const [showReceipt, setShowReceipt] = useState(false);
 
   useEffect(() => {
