@@ -90,7 +90,7 @@ export default function LoginPage() {
         </div>
 
         <a
-          href="/payment"
+         href="/buy-passcode"
           className="bg-gradient-to-r from-green-400 to-green-600 text-white text-2xl px-10 py-4 rounded-full font-bold"
         >
           Signup With Crypto

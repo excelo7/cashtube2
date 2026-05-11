@@ -51,7 +51,7 @@ export default function BuyPasscodePage() {
           </div>
 
           <a
-  href="/payment"
+  href="/buy-passcode"
   className="w-full block text-center bg-green-500 text-white text-3xl font-bold py-6 rounded-xl shadow-lg"
 >
   Submit
