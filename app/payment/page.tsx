@@ -2,60 +2,73 @@
 
 export default function PaymentPage() {
   return (
-    <main className="min-h-screen bg-[#f3f3f3]">
-      <div className="bg-[#23235c] h-56 rounded-b-[40px] p-6">
-        <h1 className="text-white text-5xl font-bold mt-20">
+    <main className="min-h-screen bg-green-950">
+
+      {/* TOP HEADER */}
+      <div className="bg-green-600 text-white px-6 py-10 shadow-lg">
+        <h1 className="text-5xl font-bold">
           CashTube.com
         </h1>
       </div>
 
-      <div className="bg-[#f3f3f3] -mt-10 rounded-t-[40px] p-8 min-h-screen">
-        <div className="space-y-10">
+      {/* MAIN CARD */}
+      <div className="bg-green-950 rounded-t-[40px] -mt-2 p-6 min-h-screen">
 
+        <div className="max-w-3xl mx-auto space-y-8">
+
+          {/* Amount */}
           <div>
-            <h2 className="text-4xl text-gray-600 mb-4">Amount</h2>
+            <label className="text-3xl text-white block mb-3">
+              Amount
+            </label>
 
             <input
               type="text"
-              placeholder="₦5,500"
-              className="w-full h-20 rounded-xl border-2 border-gray-300 px-6 text-2xl"
+              placeholder="₦6,500"
+              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
             />
           </div>
 
+          {/* Full Name */}
           <div>
-            <h2 className="text-4xl text-gray-600 mb-4">
+            <label className="text-3xl text-white block mb-3">
               Full Name
-            </h2>
+            </label>
 
             <input
               type="text"
               placeholder="Your full name"
-              className="w-full h-20 rounded-xl border-2 border-black px-6 text-2xl"
+              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
             />
           </div>
 
+          {/* Email */}
           <div>
-            <h2 className="text-4xl text-gray-600 mb-4">
+            <label className="text-3xl text-white block mb-3">
               Your Email Address
-            </h2>
+            </label>
 
             <input
               type="email"
               placeholder="email address"
-              className="w-full h-20 rounded-xl border-2 border-black px-6 text-2xl"
+              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
             />
           </div>
 
-          <button className="w-full bg-[#23235c] text-white text-3xl py-6 rounded-xl">
+          {/* Button */}
+          <button className="w-full h-20 rounded-xl bg-green-500 hover:bg-green-600 text-white text-3xl font-bold transition">
             Proceed
           </button>
 
-          <p className="text-center text-2xl text-gray-500 pt-16">
+          {/* Footer */}
+          <p className="text-center text-2xl text-green-200 pt-10">
             Powered by Flutterwave
           </p>
 
         </div>
+
       </div>
+
     </main>
   )
 }
