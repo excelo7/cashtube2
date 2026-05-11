@@ -24,7 +24,7 @@ export default function Home() {
 
         <button className="bg-green-500 text-black px-8 py-4 rounded-xl text-lg font-bold">
           <a
-  href="/login"
+  href="/buy-passcode"
   className="bg-green-500 text-black px-10 py-4 rounded-2xl font-bold text-2xl"
 >
   Get Started
