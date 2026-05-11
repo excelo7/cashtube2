@@ -114,7 +114,7 @@ export default function LoginPage() {
                 </h1>
 
                 <p className="text-3xl text-black mb-10">
-                  invalid Passcode!
+                  INVALID PASSCODE TEST
                 </p>
 
                 <button
