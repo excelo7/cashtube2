@@ -3,7 +3,7 @@
 export default function PaymentPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef]">
-
+      
       {/* TOP GREEN BAR */}
       <div className="bg-green-500 py-6 px-6">
         <h1 className="text-5xl font-bold text-white">
@@ -11,7 +11,7 @@ export default function PaymentPage() {
         </h1>
       </div>
 
-      {/* FORM SECTION */}
+      {/* FORM */}
       <div className="max-w-3xl mx-auto px-6 py-10">
 
         {/* Amount */}
@@ -23,7 +23,7 @@ export default function PaymentPage() {
           <input
             type="text"
             defaultValue="₦6,500"
-            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+            className="w-full p-5 rounded-2xl border border-gray-300 text-black text-2xl bg-white outline-none"
           />
         </div>
 
@@ -36,7 +36,7 @@ export default function PaymentPage() {
           <input
             type="text"
             placeholder="Your full name"
-            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+            className="w-full p-5 rounded-2xl border border-gray-300 text-black text-2xl bg-white outline-none"
           />
         </div>
 
@@ -49,7 +49,7 @@ export default function PaymentPage() {
           <input
             type="email"
             placeholder="email address"
-            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+            className="w-full p-5 rounded-2xl border border-gray-300 text-black text-2xl bg-white outline-none"
           />
         </div>
 
@@ -64,7 +64,6 @@ export default function PaymentPage() {
         </p>
 
       </div>
-
     </main>
   )
 }
