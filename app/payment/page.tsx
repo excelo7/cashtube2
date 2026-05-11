@@ -2,7 +2,7 @@
 
 export default function PaymentPage() {
   return (
-    <main className="min-h-screen bg-green-950">
+    <main className="min-h-screen bg-[#f7f4ef]">
 
       {/* TOP HEADER */}
       <div className="bg-green-600 text-white px-6 py-10 shadow-lg">
@@ -12,7 +12,7 @@ export default function PaymentPage() {
       </div>
 
       {/* MAIN CARD */}
-      <div className="bg-green-950 rounded-t-[40px] -mt-2 p-6 min-h-screen">
+      <div className="bg-[#f7f4ef] rounded-t-[40px] -mt-2 p-6 min-h-screen">
 
         <div className="max-w-3xl mx-auto space-y-8">
 
