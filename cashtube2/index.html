@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CashTube</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* HOME */
+
+.home{
+min-height:100vh;
+padding:30px 20px;
+text-align:center;
+position:relative;
+background:
+radial-gradient(circle at center,#1aff0050 0%,black 60%);
+}
+
+.telegram{
+position:absolute;
+top:20px;
+right:20px;
+width:18px;
+height:18px;
+background:#00ff40;
+border-radius:50%;
+box-shadow:0 0 10px #00ff40;
+cursor:pointer;
+}
+
+.hero-title{
+font-size:55px;
+font-weight:bold;
+margin-top:80px;
+line-height:1.2;
+}
+
+.hero-text{
+font-size:22px;
+margin-top:20px;
+line-height:1.6;
+opacity:0.9;
+}
+
+.start-btn{
+margin-top:40px;
+background:#7CFF32;
+color:black;
+border:none;
+padding:18px 60px;
+border-radius:18px;
+font-size:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.box{
+background:#111f74;
+padding:35px;
+margin-top:35px;
+border-radius:25px;
+text-align:left;
+}
+
+.box h2{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.box p{
+font-size:20px;
+line-height:1.5;
+}
+
+/* PASSCODE PAGE */
+
+.passcode-page{
+display:none;
+min-height:100vh;
+background:black;
+padding:30px 20px;
+text-align:center;
+}
+
+.pass-title{
+font-size:45px;
+font-weight:bold;
+color:#00ff4c;
+margin-top:20px;
+}
+
+.pass-sub{
+font-size:22px;
+margin-top:25px;
+color:#999;
+}
+
+.pass-input{
+width:100%;
+max-width:450px;
+height:80px;
+border:3px solid #00ff4c;
+border-radius:40px;
+margin:35px auto;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:12px;
+font-size:40px;
+}
+
+.dot{
+width:14px;
+height:14px;
+background:white;
+border-radius:50%;
+}
+
+.keypad{
+max-width:450px;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.key{
+height:100px;
+border:none;
+border-radius:18px;
+font-size:40px;
+font-weight:bold;
+background:#00d941;
+cursor:pointer;
+}
+
+.action-btn{
+background:white;
+color:black;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:999;
+}
+
+.popup-box{
+background:white;
+color:black;
+width:100%;
+max-width:500px;
+border-radius:18px;
+padding:40px 25px;
+text-align:center;
+}
+
+.popup-x{
+font-size:120px;
+color:#ff5f5f;
+}
+
+.popup-title{
+font-size:50px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.popup-text{
+font-size:28px;
+margin-top:20px;
+}
+
+.ok-btn{
+margin-top:35px;
+background:#00d941;
+border:none;
+color:white;
+padding:15px 50px;
+font-size:28px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.buy-link{
+margin-top:35px;
+font-size:30px;
+color:orange;
+cursor:pointer;
+}
+
+/* FORM PAGES */
+
+.form-page{
+display:none;
+min-height:100vh;
+background:#f7f5ec;
+padding:30px;
+color:black;
+}
+
+.form-wrap{
+max-width:700px;
+margin:auto;
+}
+
+.form-title{
+font-size:60px;
+font-weight:bold;
+line-height:1.2;
+}
+
+.form-text{
+font-size:24px;
+margin-top:30px;
+line-height:1.7;
+}
+
+.label{
+display:block;
+font-size:30px;
+font-weight:bold;
+margin-top:40px;
+margin-bottom:15px;
+}
+
+.input{
+width:100%;
+height:90px;
+border-radius:18px;
+border:2px solid #ccc;
+padding:20px;
+font-size:28px;
+}
+
+.proceed-btn{
+width:100%;
+height:85px;
+margin-top:40px;
+border:none;
+background:#00c932;
+color:white;
+font-size:34px;
+font-weight:bold;
+border-radius:16px;
+cursor:pointer;
+}
+
+.powered{
+text-align:center;
+margin-top:50px;
+font-size:28px;
+font-weight:bold;
+}
+
+/* TRANSFER PAGE */
+
+.transfer-page{
+display:none;
+min-height:100vh;
+background:#f7f5ec;
+padding:20px;
+color:black;
+}
+
+.transfer-wrap{
+max-width:700px;
+margin:auto;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+font-size:26px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.amount-top{
+text-align:right;
+font-size:34px;
+font-weight:bold;
+margin-top:30px;
+line-height:1.5;
+}
+
+.transfer-title{
+font-size:32px;
+margin-top:50px;
+line-height:1.6;
+}
+
+.transfer-box{
+border:2px solid #ccc;
+padding:25px;
+margin-top:30px;
+}
+
+.row{
+margin-bottom:35px;
+}
+
+.row small{
+font-size:24px;
+}
+
+.row h3{
+font-size:48px;
+margin-top:10px;
+}
+
+.green-btn{
+background:#00c932;
+border:none;
+color:white;
+padding:12px 28px;
+border-radius:10px;
+font-size:24px;
+cursor:pointer;
+}
+
+.made-btn{
+width:100%;
+height:80px;
+background:#00c932;
+color:white;
+border:none;
+border-radius:12px;
+font-size:28px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* LOADING */
+
+.loading-page{
+display:none;
+min-height:100vh;
+background:#f7f5ec;
+padding:20px;
+color:black;
+text-align:center;
+}
+
+.loader{
+width:90px;
+height:90px;
+border:10px solid #ddd;
+border-top:10px solid #00c932;
+border-radius:50%;
+margin:70px auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+.status-box{
+background:white;
+border:2px solid #ddd;
+padding:25px;
+margin-top:30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:28px;
+}
+
+.small-loader{
+width:35px;
+height:35px;
+border:5px solid #ddd;
+border-top:5px solid #00c932;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+/* FAILED */
+
+.failed-page{
+display:none;
+min-height:100vh;
+background:#f7f5ec;
+padding:20px;
+color:black;
+text-align:center;
+}
+
+.failed-x{
+width:320px;
+height:320px;
+background:#ff4036;
+border-radius:50%;
+margin:60px auto 40px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:180px;
+color:white;
+}
+
+.failed-title{
+font-size:45px;
+font-weight:bold;
+color:orange;
+}
+
+.failed-text{
+font-size:24px;
+margin-top:30px;
+line-height:1.7;
+}
+
+.email-box{
+margin-top:40px;
+border:2px solid #bbb;
+height:90px;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 25px;
+font-size:22px;
+background:white;
+}
+
+.eye{
+font-size:35px;
+}
+
+@media(max-width:700px){
+
+.hero-title{
+font-size:40px;
+}
+
+.box h2{
+font-size:28px;
+}
+
+.form-title{
+font-size:40px;
+}
+
+.row h3{
+font-size:34px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+
+<section class="home" id="home">
+
+<div class="telegram"
+onclick="window.open('https://t.me/cashtubehelp')">
+</div>
+
+<h1 class="hero-title">
+Watch Videos & Earn Money
+</h1>
+
+<p class="hero-text">
+Join thousands of users earning daily rewards by watching videos, completing tasks and inviting friends.
+</p>
+
+<button class="start-btn" onclick="openPasscode()">
+Get Started
+</button>
+
+<div class="box">
+<h2>Daily Earnings</h2>
+<p>Earn rewards daily from watching content online.</p>
+</div>
+
+<div class="box">
+<h2>Referral Bonus</h2>
+<p>Invite your friends and grow your income faster.</p>
+</div>
+
+</section>
+
+
+
+
+
+<!-- PASSCODE -->
+
+<section class="passcode-page" id="passcodePage">
+
+<h1 class="pass-title">
+CashTube 2026
+</h1>
+
+<p class="pass-sub">
+Enter (5) digit code
+</p>
+
+<div class="pass-input" id="dots"></div>
+
+<div class="keypad">
+
+<button class="key" onclick="addNumber(1)">1</button>
+<button class="key" onclick="addNumber(2)">2</button>
+<button class="key" onclick="addNumber(3)">3</button>
+
+<button class="key" onclick="addNumber(4)">4</button>
+<button class="key" onclick="addNumber(5)">5</button>
+<button class="key" onclick="addNumber(6)">6</button>
+
+<button class="key" onclick="addNumber(7)">7</button>
+<button class="key" onclick="addNumber(8)">8</button>
+<button class="key" onclick="addNumber(9)">9</button>
+
+<button class="key action-btn" onclick="openForm()">
+Sign Up
+</button>
+
+<button class="key action-btn" onclick="clearCode()">
+Clear
+</button>
+
+<button class="key action-btn" onclick="showPopup()">
+Login
+</button>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<div class="popup-x">✕</div>
+
+<div class="popup-title">
+Oops...
+</div>
+
+<div class="popup-text">
+invalid Passcode!
+</div>
+
+<button class="ok-btn"
+onclick="closePopup()">
+OK
+</button>
+
+<div class="buy-link"
+onclick="openForm()">
+Buy Passcode?
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- FIRST FORM -->
+
+<section class="form-page" id="formPage">
+
+<div class="form-wrap">
+
+<div class="form-title">
+Buy Your Passcode
+</div>
+
+<div class="form-text">
+Please provide your details, note that your passcode will be reviewed immediately your payment is completed
+</div>
+
+<label class="label">Name:</label>
+<input class="input" placeholder="Your full name">
+
+<label class="label">Number:</label>
+<input class="input" placeholder="Phone number">
+
+<label class="label">Amount:</label>
+<input class="input" value="₦6,500" readonly>
+
+<button class="proceed-btn"
+onclick="openSecondForm()">
+Submit
+</button>
+
+<div style="
+margin-top:40px;
+font-size:22px;
+line-height:1.8;
+">
+
+You have to make payment of ₦6,500 in order to be granted full access to the
+<span style="color:#f09ac0;">
+CASH-TUBE
+</span>
+video earning app.
+
+<br><br>
+
+Please note that you can withdraw back your ₦6,500 immediately you gain access to your dashboard.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- SECOND FORM -->
+
+<section class="form-page" id="secondFormPage">
+
+<div class="form-wrap">
+
+<label class="label">Amount</label>
+<input class="input" value="₦6,500" readonly>
+
+<label class="label">Full Name</label>
+<input class="input"
+id="nameInput"
+placeholder="Your full name">
+
+<label class="label">Your Email Address</label>
+<input class="input"
+id="emailInput"
+placeholder="email address">
+
+<button class="proceed-btn"
+onclick="openTransfer()">
+Proceed
+</button>
+
+<div class="powered">
+Powered by Paystack
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- TRANSFER PAGE -->
+
+<section class="transfer-page" id="transferPage">
+
+<div class="transfer-wrap">
+
+<div class="topbar">
+<span>Bank Transfer</span>
+<span style="color:#b10000;">Cancel</span>
+</div>
+
+<div class="amount-top">
+NGN 6,500
+<br>
+
+<span id="showEmail"
+style="
+font-size:20px;
+font-weight:normal;
+word-break:break-word;
+">
+</span>
+
+</div>
+
+<div class="transfer-title">
+Proceed to your bank app to complete this Transfer
+</div>
+
+<div class="transfer-box">
+
+<div class="row"
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+">
+
+<div>
+<small>Amount</small>
+<h3>NGN 6,500</h3>
+</div>
+
+<button class="green-btn"
+onclick="copyText('NGN 6,500')">
+Copy
+</button>
+
+</div>
+
+<div class="row"
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+">
+
+<div>
+<small>Account Number</small>
+<h3>2045641769</h3>
+</div>
+
+<button class="green-btn"
+onclick="copyText('2045641769')">
+Copy
+</button>
+
+</div>
+
+<div class="row">
+<small>Bank Name</small>
+<h3>Paga Bank</h3>
+</div>
+
+<div class="row">
+<small>Account Name</small>
+<h3>Abdullahi Muhammad</h3>
+</div>
+
+<hr style="margin:25px 0;">
+
+<div style="
+font-size:24px;
+line-height:1.5;
+margin-bottom:25px;
+">
+Pay to this specific account and get your access code
+</div>
+
+<button class="made-btn"
+onclick="showLoading()">
+I have made this bank transfer
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- LOADING -->
+
+<section class="loading-page" id="loadingPage">
+
+<div class="topbar">
+<span>Bank Transfer</span>
+<span style="color:#b10000;">Cancel</span>
+</div>
+
+<div class="amount-top">
+NGN 6,500
+<br>
+
+<span id="loadingEmail"
+style="
+font-size:20px;
+font-weight:normal;
+">
+</span>
+
+</div>
+
+<div class="transfer-title">
+Proceed to your bank app to complete this Transfer
+</div>
+
+<div class="loader"></div>
+
+<div style="
+font-size:30px;
+margin-top:20px;
+">
+Wait while we confirm your payment....
+</div>
+
+<div class="status-box">
+<span>Payment Made</span>
+<span style="
+width:30px;
+height:30px;
+border:4px solid #00c932;
+border-radius:6px;
+display:inline-block;
+"></span>
+</div>
+
+<div class="status-box">
+<span>Confirming Payment</span>
+<div class="small-loader"></div>
+</div>
+
+</section>
+
+
+
+
+
+<!-- FAILED -->
+
+<section class="failed-page" id="failedPage">
+
+<div class="topbar">
+<span>Bank Transfer</span>
+<span style="color:#b10000;">Cancel</span>
+</div>
+
+<div class="amount-top">
+NGN 6,500
+<br>
+
+<span id="failedEmail"
+style="
+font-size:20px;
+font-weight:normal;
+">
+</span>
+
+</div>
+
+<div class="failed-x">
+✕
+</div>
+
+<div class="failed-title">
+PAYMENT NOT CONFIRMED!
+</div>
+
+<div class="failed-text">
+Your payment wasn't confirmed. contact us on email for help
+</div>
+
+<div class="email-box">
+<span>
+@cashtubesupportteam@gmail.com
+</span>
+
+<span class="eye">
+👁
+</span>
+
+</div>
+
+</section>
+
+
+
+
+
+<script>
+
+let code = "";
+
+function openPasscode(){
+
+document.getElementById("home").style.display="none";
+
+document.getElementById("passcodePage").style.display="block";
+
+}
+
+function addNumber(num){
+
+if(code.length < 5){
+
+code += num;
+
+updateDots();
+
+}
+
+}
+
+function updateDots(){
+
+let dots = "";
+
+for(let i=0;i<code.length;i++){
+
+dots += '<div class="dot"></div>';
+
+}
+
+document.getElementById("dots").innerHTML = dots;
+
+}
+
+function clearCode(){
+
+code = "";
+
+updateDots();
+
+}
+
+function showPopup(){
+
+document.getElementById("popup").style.display="flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+function openForm(){
+
+closePopup();
+
+document.getElementById("passcodePage").style.display="none";
+
+document.getElementById("formPage").style.display="block";
+
+}
+
+function openSecondForm(){
+
+document.getElementById("formPage").style.display="none";
+
+document.getElementById("secondFormPage").style.display="block";
+
+}
+
+function openTransfer(){
+
+let email =
+document.getElementById("emailInput").value;
+
+document.getElementById("showEmail").innerText=email;
+
+document.getElementById("loadingEmail").innerText=email;
+
+document.getElementById("failedEmail").innerText=email;
+
+document.getElementById("secondFormPage").style.display="none";
+
+document.getElementById("transferPage").style.display="block";
+
+}
+
+function copyText(text){
+
+navigator.clipboard.writeText(text);
+
+alert("Copied!");
+
+}
+
+function showLoading(){
+
+document.getElementById("transferPage").style.display="none";
+
+document.getElementById("loadingPage").style.display="block";
+
+setTimeout(()=>{
+
+document.getElementById("loadingPage").style.display="none";
+
+document.getElementById("failedPage").style.display="block";
+
+},15000);
+
+}
+
+</script>
+
+</body>
+</html>
