@@ -3,14 +3,7 @@ import { useState } from "react"
 
 export default function LoginPage() {
   const [code, setCode] = useState("")
-
-  const handleLogin = () => {
-    if (code.length === 5) {
-      window.location.href = "/dashboard"
-    } else {
-      alert("Invalid code")
-    }
-  }
+  const [showPopup, setShowPopup] = useState(false)
 
   return (
     <>
@@ -86,7 +79,9 @@ export default function LoginPage() {
           </button>
 
           <button
-            onClick={handleLogin}
+            onClick={() => {
+              setShowPopup(true)
+            }}
             className="w-24 h-24 bg-white border-2 border-black rounded-2xl text-black text-2xl font-bold"
           >
             Login
@@ -100,6 +95,50 @@ export default function LoginPage() {
         >
           Signup With Crypto
         </a>
+
+        {showPopup && (
+          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+
+            <div className="bg-[#f5f1ea] w-[90%] max-w-md rounded-3xl overflow-hidden shadow-2xl">
+
+              <div className="p-10 text-center">
+
+                <div className="w-32 h-32 border-4 border-red-500 rounded-full flex items-center justify-center mx-auto mb-8">
+                  <span className="text-red-500 text-7xl font-bold">
+                    ×
+                  </span>
+                </div>
+
+                <h1 className="text-5xl font-bold text-black mb-6">
+                  Oops...
+                </h1>
+
+                <p className="text-3xl text-black mb-10">
+                  invalid Passcode!
+                </p>
+
+                <button
+                  onClick={() => setShowPopup(false)}
+                  className="bg-green-500 text-white text-3xl px-10 py-4 rounded-xl font-bold"
+                >
+                  OK
+                </button>
+
+              </div>
+
+              <div className="border-t border-gray-300 p-6 text-center">
+                <a
+                  href="/buy-passcode"
+                  className="text-orange-500 text-3xl font-medium"
+                >
+                  Buy Passcode?
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        )}
 
       </main>
 
@@ -129,4 +168,4 @@ export default function LoginPage() {
 
     </>
   )
-  }
+}
