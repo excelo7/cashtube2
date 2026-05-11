@@ -1,86 +1,60 @@
 "use client"
 
-import { useEffect, useState } from "react"
-
 export default function PaymentPage() {
-  const [timeLeft, setTimeLeft] = useState(1200)
-
-  useEffect(() => {
-    if (timeLeft <= 0) return
-
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1)
-    }, 1000)
-
-    return () => clearInterval(timer)
-  }, [timeLeft])
-
-  const minutes = Math.floor(timeLeft / 60)
-  const seconds = timeLeft % 60
-
   return (
-    <main className="min-h-screen bg-[#f7f4ef] flex items-center justify-center p-6">
-      <div className="w-full max-w-md bg-[#fffdf9] rounded-3xl shadow-2xl p-8">
-
-        <h1 className="text-4xl font-bold text-center text-black mb-8">
-          Signup With Crypto
+    <main className="min-h-screen bg-[#f3f3f3]">
+      <div className="bg-[#23235c] h-56 rounded-b-[40px] p-6">
+        <h1 className="text-white text-5xl font-bold mt-20">
+          CashTube.com
         </h1>
+      </div>
 
-        <div className="space-y-8">
+      <div className="bg-[#f3f3f3] -mt-10 rounded-t-[40px] p-8 min-h-screen">
+        <div className="space-y-10">
 
           <div>
-            <h2 className="text-2xl font-bold text-green-700 mb-3">
-              Tether USDT
-            </h2>
+            <h2 className="text-4xl text-gray-600 mb-4">Amount</h2>
 
-            <div className="bg-gray-100 p-4 rounded-2xl break-all text-black text-lg">
-              0x5a60835bb807350B0dEC38d0cb04aDe2e123000E
-            </div>
+            <input
+              type="text"
+              placeholder="₦5,500"
+              className="w-full h-20 rounded-xl border-2 border-gray-300 px-6 text-2xl"
+            />
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-orange-700 mb-3">
-              BTC
+            <h2 className="text-4xl text-gray-600 mb-4">
+              Full Name
             </h2>
 
-            <div className="bg-gray-100 p-4 rounded-2xl break-all text-black text-lg">
-              bc1qlf3fpar8zsgr6t0drhqyyu7d3w75vqgr4s0r3h
-            </div>
+            <input
+              type="text"
+              placeholder="Your full name"
+              className="w-full h-20 rounded-xl border-2 border-black px-6 text-2xl"
+            />
           </div>
 
           <div>
-            <h2 className="text-2xl font-bold text-purple-700 mb-3">
-              Solana
+            <h2 className="text-4xl text-gray-600 mb-4">
+              Your Email Address
             </h2>
 
-            <div className="bg-gray-100 p-4 rounded-2xl break-all text-black text-lg">
-              DUoH8zDsruNMM47CZaK9PAGW1ktJktjmEZwG4PBAakR1
-            </div>
+            <input
+              type="email"
+              placeholder="email address"
+              className="w-full h-20 rounded-xl border-2 border-black px-6 text-2xl"
+            />
           </div>
 
-          <div>
-            <h2 className="text-2xl font-bold text-blue-700 mb-3">
-              Ethereum
-            </h2>
+          <button className="w-full bg-[#23235c] text-white text-3xl py-6 rounded-xl">
+            Proceed
+          </button>
 
-            <div className="bg-gray-100 p-4 rounded-2xl break-all text-black text-lg">
-              0x5a60835bb807350B0dEC38d0cb04aDe2e123000E
-            </div>
-          </div>
-
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-2xl font-bold text-red-600">
-            Payment closes in
+          <p className="text-center text-2xl text-gray-500 pt-16">
+            Powered by Flutterwave
           </p>
 
-          <div className="mt-4 text-5xl font-extrabold text-black">
-            {String(minutes).padStart(2, "0")}:
-            {String(seconds).padStart(2, "0")}
-          </div>
         </div>
-
       </div>
     </main>
   )
