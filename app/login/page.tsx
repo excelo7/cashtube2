@@ -97,9 +97,9 @@ export default function LoginPage() {
         </a>
 
         {showPopup && (
-          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
 
-            <div className="bg-white w-[90%] max-w-md rounded-3xl overflow-hidden shadow-2xl">
+            <div className="bg-[#f5f1ea] w-[90%] max-w-md rounded-3xl overflow-hidden shadow-2xl">
 
               <div className="p-10 text-center">
 
