@@ -90,16 +90,16 @@ export default function LoginPage() {
         </div>
 
         <a
-          href="/buy-passcode"
+          href="/payment"
           className="bg-gradient-to-r from-green-400 to-green-600 text-white text-2xl px-10 py-4 rounded-full font-bold"
         >
           Signup With Crypto
         </a>
 
         {showPopup && (
-          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
 
-            <div className="bg-[#f5f1ea] w-[90%] max-w-md rounded-3xl overflow-hidden shadow-2xl">
+            <div className="bg-white w-[90%] max-w-md rounded-3xl overflow-hidden shadow-2xl">
 
               <div className="p-10 text-center">
 
