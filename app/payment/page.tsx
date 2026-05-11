@@ -4,68 +4,64 @@ export default function PaymentPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef]">
 
-      {/* TOP HEADER */}
-      <div className="bg-green-600 text-white px-6 py-10 shadow-lg">
-        <h1 className="text-5xl font-bold">
+      {/* TOP GREEN BAR */}
+      <div className="bg-green-500 py-6 px-6">
+        <h1 className="text-5xl font-bold text-white">
           CashTube.com
         </h1>
       </div>
 
-      {/* MAIN CARD */}
-      <div className="bg-[#f7f4ef] rounded-t-[40px] -mt-2 p-6 min-h-screen">
+      {/* FORM SECTION */}
+      <div className="max-w-3xl mx-auto px-6 py-10">
 
-        <div className="max-w-3xl mx-auto space-y-8">
+        {/* Amount */}
+        <div className="mb-8">
+          <label className="block text-black text-3xl mb-3">
+            Amount
+          </label>
 
-          {/* Amount */}
-          <div>
-            <label className="text-3xl text-white block mb-3">
-              Amount
-            </label>
-
-            <input
-              type="text"
-              placeholder="₦6,500"
-              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
-            />
-          </div>
-
-          {/* Full Name */}
-          <div>
-            <label className="text-3xl text-white block mb-3">
-              Full Name
-            </label>
-
-            <input
-              type="text"
-              placeholder="Your full name"
-              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
-            />
-          </div>
-
-          {/* Email */}
-          <div>
-            <label className="text-3xl text-white block mb-3">
-              Your Email Address
-            </label>
-
-            <input
-              type="email"
-              placeholder="email address"
-              className="w-full h-20 rounded-xl border border-green-700 bg-green-900 text-white px-5 text-2xl outline-none"
-            />
-          </div>
-
-          {/* Button */}
-          <button className="w-full h-20 rounded-xl bg-green-500 hover:bg-green-600 text-white text-3xl font-bold transition">
-            Proceed
-          </button>
-
-          {/* Footer */}
-          <p className="text-center text-2xl text-green-200 pt-10">
-            Powered by Flutterwave
-          </p>
-
+          <input
+            type="text"
+            defaultValue="₦6,500"
+            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+          />
         </div>
+
+        {/* Full Name */}
+        <div className="mb-8">
+          <label className="block text-black text-3xl mb-3">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            placeholder="Your full name"
+            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+          />
+        </div>
+
+        {/* Email */}
+        <div className="mb-8">
+          <label className="block text-black text-3xl mb-3">
+            Your Email Address
+          </label>
+
+          <input
+            type="email"
+            placeholder="email address"
+            className="w-full p-5 rounded-2xl border border-gray-300 bg-white text-black text-2xl outline-none"
+          />
+        </div>
+
+        {/* BUTTON */}
+        <button className="w-full bg-green-500 text-white text-3xl font-bold py-5 rounded-2xl">
+          Proceed
+        </button>
+
+        {/* FOOTER */}
+        <p className="text-center text-gray-500 text-2xl mt-10">
+          Powered by Flutterwave
+        </p>
 
       </div>
 
